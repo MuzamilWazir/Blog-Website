@@ -1,10 +1,10 @@
 import mongoose, { connect } from "mongoose";
 import "dotenv/config";
 const connectdb = async () => {
-  const uri = process.env.MONGO_URI;
+  const uri = process.env.MONGODB_URI;
 
   if (!uri) {
-    throw new Error("MONGO_URI is not defined in .env file");
+    throw new Error("MONGODB_URI is not defined in .env file");
   }
 
   try {
@@ -15,3 +15,5 @@ const connectdb = async () => {
     throw error;
   }
 };
+
+export default connectdb;
